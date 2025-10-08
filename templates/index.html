@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="si">
+<head>
+    <meta charset="UTF-8">
+    <title>Sinhala Audio to Text Converter</title>
+    <style>
+        body { 
+            font-family: 'Iskoola Pota', 'Noto Sans Sinhala', sans-serif; 
+            text-align: center; 
+            margin-top: 50px; 
+            background-color: #f4f4f9;
+        }
+        .container {
+            max-width: 700px;
+            margin: auto;
+            background: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #333;
+        }
+        input[type="file"] {
+            border: 2px dashed #ccc;
+            padding: 20px;
+            width: 80%;
+            margin: 20px 0;
+            border-radius: 5px;
+        }
+        button { 
+            padding: 12px 25px; 
+            font-size: 16px; 
+            cursor: pointer;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        #statusMessage {
+            margin-top: 20px;
+            color: #555;
+            font-style: italic;
+        }
+        #result { 
+            width: 95%; 
+            min-height: 150px; 
+            margin: 20px auto; 
+            border: 1px solid #ccc; 
+            padding: 10px; 
+            text-align: left;
+            background-color: #fafafa;
+            white-space: pre-wrap; /* To preserve line breaks */
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>සිංහල Audio File to Text</h1>
+        <p>ඔබට අවශ්‍ය සිංහල ශ්‍රව්‍ය ගොනුව (Audio File) මෙතනින් තෝරන්න.</p>
+
+        <input type="file" id="audioFileInput" accept="audio/*">
+
+        <button id="convertBtn">📜 පෙළ බවට හරවන්න</button>
+        
+        <div id="statusMessage"></div>
+        
+        <h3>පරිවර්තනය කළ පෙළ:</h3>
+        <div id="result"></div>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+
+</body>
+</html>
