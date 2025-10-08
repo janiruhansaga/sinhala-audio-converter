@@ -3,7 +3,7 @@ import speech_recognition as sr
 from flask import Flask, request, jsonify, render_template
 
 # Flask app එක හදාගන්නවා
-app = Flask(__name__)
+app = Flask(__name__, template_folder='../templates', static_folder='../static')
 
 # මුල්ම පේජ් එක (/) load කරනකොට index.html එක පෙන්නන්න කියනවා
 @app.route('/')
